@@ -110,7 +110,6 @@ function contact(array){
   for (let i = 0; i < array.length; i++) {
     contactInfo.push(`${array[i].first_name} ${array[i].email}`);
   }
-  return ;
 }
 
 console.log (contact(graduates));
@@ -118,21 +117,21 @@ console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
+// const uni = [];
 
-function  includesUni(array){
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].univeristies.includes('Uni')) {
-      uni.push(array[i].univeristies);
-    }
-    else {
-      i++
-    }
-  }
-}
+// function  includesUni(array){
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i].univeristies === 'Uni') {
+//       uni.push(array[i].univeristies);
+//     }
+//     else {
+//       i++
+//     }
+//   }
+// }
 
-console.log(includesUni(graduates));
-console.log(uni);
+// console.log(includesUni(graduates));
+// console.log(uni);
 
 
 
@@ -157,7 +156,13 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
+
 const animalNames = [];
+
+zooAnimals.forEach(function (item, index){
+  animalNames[index] = (`${item.animal_name}, ${item.scientific_name}.`);
+})
+
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -167,22 +172,40 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
+
+zooAnimals.map( function(item) {
+  lowerCase.push(item.animal_name.toLowerCase());
+});
+
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
 
-The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
+The zoos are concerned about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
-console.log(largerPopulation);
+
+const lowerPopulation = [];
+
+function filterPop(item) {
+  if (item.population < 5){
+    lowerPopulation.push(item.animal_name);
+  }
+}
+
+let lowerPop = zooAnimals.filter(filterPop); 
+console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+
+let populationTotal = zooAnimals.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue.population;
+}, 0);
+
 console.log(populationTotal);
 
 
