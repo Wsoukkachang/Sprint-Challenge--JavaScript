@@ -130,8 +130,6 @@ function  includesUni(array){
 console.log(includesUni(graduates));
 console.log(uni);
 
-
-
 // ==== ADVANCED Array Methods ====
 
 // Given this zoo data from around the United States, follow the instructions below.  Use the specific array methods in the requests below to solve the problems.
@@ -210,5 +208,106 @@ console.log(populationTotal);
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
+
 */
+
+/* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
+Once you have the new array created, sort the universities alphabetically and log the result. */
+
+// const universities = [];
+
+//  let univeristies = (array) => {
+//   for (let i = 0; i < array.length; i++) {
+//     universities.push(array[i].university);
+//   }
+//   universities.sort();
+// }
+
+// console.log(univeristies(graduates));
+// console.log(universities)
+
+/* Request 2: Create a new array called contactInfo that contains both first name and email of each student.  */
+
+// const contactInfo = [];
+
+// let contact = (array) => {
+//   for (let i = 0; i < array.length; i++) {
+//     contactInfo.push(`${array[i].first_name} ${array[i].email}`);
+//   }
+// }
+
+// console.log (contact(graduates));
+// console.log(contactInfo);
+
+/* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
+// const uni = [];
+
+// let includesUni = (array) => {
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i].university.includes('Uni')) {
+//       uni.push(array[i].university);
+//     }
+//   }
+// }
+
+// console.log(includesUni(graduates));
+// console.log(uni);
+
+/* Request 1: .forEach()
+
+The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
+
+*/
+
+// const animalNames = [];
+
+// zooAnimals.forEach((item, index) => {
+//   animalNames[index] = (`${item.animal_name}, ${item.scientific_name}.`);
+// });
+
+// console.log(animalNames);
+
+/* Request 2: .map()    
+
+The zoos need a list of all their animal's names (names only, not scientific) converted to lower case.  Create a new array named lowerCase and map over each name to convert them all to lower case.  Log the resut.
+
+*/
+
+// const lowerCase = [];
+
+// zooAnimals.map((item) => {
+//   lowerCase.push(item.animal_name.toLowerCase());
+// });
+
+// console.log(lowerCase); 
+
+/* Request 3: .filter() 
+
+The zoos are concerned about animals with a lower population count. Find out which animals have a population less than 5.
+
+*/
+
+// const lowerPopulation = [];
+
+// filterPop = (item) => {
+//   if (item.population < 5){
+//     lowerPopulation.push(item.animal_name);
+//   }
+// }
+
+// let lowerPop = zooAnimals.filter(filterPop); 
+// console.log(lowerPopulation);
+
+/* Request 4: .reduce() 
+
+The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
+
+*/
+
+// let populationTotal = zooAnimals.reduce((accumulator, currentValue) => {
+//   return accumulator + currentValue.population;
+// }, 0) ;
+
+// console.log(populationTotal);
+
 

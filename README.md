@@ -38,21 +38,21 @@ Methods belong to classes and can only be used by that class, where as functions
 
 3. What is closure?
 
-Closure is the accessibility and scope of elements, most apparent in nested functions. A function can reach inward for elements, but not outward.
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. 
 
 4. Describe the four rules of the 'this' keyword.
 
-Window Binding – When no object has been declared, the "this" keyword will refer to the console/window and pull from any methods or variables in that “object”. Will bind to window unless "use strict".
+Window Binding – When no object has been declared, the "this" keyword will refer to the console/window and pull from any methods or variables in that “object”. Will bind to console/window unless "use strict".
 
-Implicit Binding – Using the this keyword inside an object after that object has been created or called. Usually the object to the left of period will be object that this is referring to.
+Implicit Binding – Using the "this" keyword inside an object after that object has been created or called. Usually the object to the left of period will be object that this is referring to.
 
 New Binding – Creates a new object using a constructor function. Used inside constructor functions and classes to refer to the “new” object that has just been created.
 
-Explicit Binding – Giving the "this" keyword an object to refer to only for one instance. The methods call, apply, and bind will have to be called to assign the this keyword to that object temporarily. It is a more detailed binding and gives specific directions.
+Explicit Binding – Giving the "this" keyword an object to refer to only for one instance. It is a more detailed binding and gives specific directions. The methods call, apply, and bind will have to be called to assign the this keyword to that object temporarily. 
 
 5. Why do we need super() in an extended class?
 
-Super() will add the parent functions to the child class. --- Basically, the .call()
+super() will add the parent functions to the child class. --- Basically, the .call()
 
 ## Project Set up
 
