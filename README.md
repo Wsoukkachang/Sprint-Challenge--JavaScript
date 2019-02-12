@@ -30,13 +30,29 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+.map returns a new array as a result and .forEach does not.
+
 2. What is the difference between a function and a method?
+
+Methods belong to classes and can only be used by that class, where as functions can be used anywhere.
 
 3. What is closure?
 
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. 
+
 4. Describe the four rules of the 'this' keyword.
 
+Window Binding – When no object has been declared, the "this" keyword will refer to the console/window and pull from any methods or variables in that “object”. Will bind to console/window unless "use strict".
+
+Implicit Binding – Using the "this" keyword inside an object after that object has been created or called. Usually the object to the left of period will be object that this is referring to.
+
+New Binding – Creates a new object using a constructor function. Used inside constructor functions and classes to refer to the “new” object that has just been created.
+
+Explicit Binding – Giving the "this" keyword an object to refer to only for one instance. It is a more detailed binding and gives specific directions. The methods call, apply, and bind will have to be called to assign the this keyword to that object temporarily. 
+
 5. Why do we need super() in an extended class?
+
+super() will add the parent functions to the child class. --- Basically, the .call()
 
 ## Project Set up
 
